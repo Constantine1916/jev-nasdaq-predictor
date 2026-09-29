@@ -1,0 +1,18 @@
+# Runtime predictions and raw JEV request/response snapshots
+runs/*
+!runs/.gitkeep
+
+# Python and local tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# macOS/editor files
+.DS_Store
+.idea/
+.vscode/

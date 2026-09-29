@@ -1,0 +1,29 @@
+{
+  "model": "jev-1.13.0",
+  "input_schema_version": "expanded-v1",
+  "symbol": "^IXIC",
+  "data_source": "Yahoo Finance chart API + U.S. Treasury XML + BLS public API",
+  "lookback_days": 120,
+  "recent_points": 10,
+  "cross_asset_symbols": {
+    "sp500": "^GSPC",
+    "nasdaq100_futures": "NQ=F",
+    "vix": "^VIX",
+    "dollar_index": "DX-Y.NYB",
+    "wti_front_month": "CL=F",
+    "brent_front_month": "BZ=F",
+    "gold_front_month": "GC=F"
+  },
+  "bls_series": {
+    "cpi_headline_index": "CUSR0000SA0",
+    "cpi_core_index": "CUSR0000SA0L1E",
+    "unemployment_rate": "LNS14000000",
+    "nonfarm_payrolls": "CES0000000001",
+    "average_hourly_earnings": "CES0500000003"
+  },
+  "question": "Using only the supplied point-in-time state available at as_of_utc, will the Nasdaq Composite index (^IXIC) close higher or lower in the next available US regular trading session than the latest available close? Weigh price momentum, volatility, Treasury yields, the dollar, commodities, and the latest available macroeconomic data. Treat unavailable or stale data as unknown and do not invent facts.",
+  "criteria": {
+    "up": "The next available US regular-session close is higher than the latest available close.",
+    "down": "The next available US regular-session close is lower than or equal to the latest available close."
+  }
+}
